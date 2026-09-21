@@ -41,3 +41,30 @@ def plot_test_data(X_test, y_test):
 
 def number_of_dark_pixels(X):
     return np.sum(X < 128, axis=1)
+
+
+def show_misclassified_images(
+    X_test, y_test, predictions, actual_label, predicted_label, n=8
+):
+    wrong_indices = np.where(
+        (y_test == actual_label) & (np.array(predictions) == predicted_label)
+    )[0]
+
+    n = min(n, len(wrong_indices))
+
+    plt.figure(figsize=(12, 3))
+
+    for i in range(n):
+        index = wrong_indices[i]
+
+        plt.subplot(1, n, i + 1)
+        plt.imshow(X_test[index].reshape(28, 28), cmap="gray")
+
+        plt.title(f"Act: {y_test[index]}\nPred: {predictions[index]}")
+
+        plt.axis("off")
+
+    plt.suptitle(f"❌ Misclassified {actual_label} → {predicted_label}")
+
+    plt.tight_layout()
+    plt.show()
