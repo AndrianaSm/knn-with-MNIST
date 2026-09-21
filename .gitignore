@@ -9,4 +9,3 @@ wheels/
 # Virtual environments
 .venv
 
-src/knn_with_mnist/data/*.csv
