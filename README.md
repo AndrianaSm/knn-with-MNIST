@@ -93,6 +93,20 @@ The biggest confusions were:
 | 8 | 5 | **5** |
 
 The most noticeable error was **4 → 9**, where 16 images of the digit 4 were classified as 9. This shows that some handwritten digits can look quite similar to the classifier.
+
+### 👀 Visualizing wrong predictions
+
+To better understand these errors, I also visualized some of the misclassified images.
+
+For example, the following visualization shows images that were actually **7** but were predicted as **9**:
+
+
+<img width="1200" height="300" alt="mistake7" src="https://github.com/user-attachments/assets/b2a67694-4579-4a5b-9b39-69a2bbf21a1b" />
+
+
+This makes it easier to see why some handwritten digits can be difficult to distinguish.
+
+
 ## 🧠 Conclusion
 
 The best result in this experiment was **88.99% accuracy using Euclidean distance with `k = 3`**.
