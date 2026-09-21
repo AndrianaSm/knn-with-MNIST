@@ -7,7 +7,10 @@ authors = [
     { name = "Andriana", email = "andrianasma@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "numpy>=2.5.3",
+    "pandas>=3.0.6",
+]
 
 [project.scripts]
 knn-with-mnist = "knn_with_mnist:main"
