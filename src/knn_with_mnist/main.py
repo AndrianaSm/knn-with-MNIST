@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from helpers import euclidean_distance, manhattan_distance, show_misclassified_images
+from helpers import euclidean_distance, manhattan_distance
 from knn import KNN
 from sklearn.metrics import (
     ConfusionMatrixDisplay,
@@ -12,8 +12,8 @@ from sklearn.metrics import (
 # 1. Load data
 # ============================================================
 
-train = pd.read_csv("data/mnist_train.csv")
-test = pd.read_csv("data/mnist_test.csv")
+train = pd.read_csv("data/train.csv")
+test = pd.read_csv("data/test.csv")
 
 y_train = train.iloc[:, 0].values
 X_train = train.iloc[:, 1:].values
